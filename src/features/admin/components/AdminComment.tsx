@@ -10,6 +10,7 @@ import useAdminPost from "../hooks/useAdminPost";
 import PageNation from "../../../components/PageNation";
 import * as St from "../styles/AdminStyle";
 import Error from "../../../components/ServerError";
+import Button from "../../../components/Button";
 
 const AdminComment = () => {
   const [page, setPage] = useState<number>(1);
@@ -50,20 +51,22 @@ const AdminComment = () => {
                   <td>{item.count}</td>
                   <td>{item.reason}</td>
                   <td>
-                    <button
+                    <Button
+                      size="small"
                       onClick={() => {
                         adminDeleteWrongReport(item.id);
                       }}
                     >
                       <RiDeleteBin6Line />
-                    </button>
-                    <button
+                    </Button>
+                    <Button
+                      size="small"
                       onClick={() => {
                         onReportDelete(item.reportId);
                       }}
                     >
                       신고삭제
-                    </button>
+                    </Button>
                   </td>
                 </tr>
               );

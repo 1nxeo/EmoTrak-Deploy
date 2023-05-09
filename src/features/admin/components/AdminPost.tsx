@@ -9,6 +9,7 @@ import PageNation from "../../../components/PageNation";
 import { IAdminData } from "../../../data/type/type";
 import * as St from "../styles/AdminStyle";
 import Error from "../../../components/ServerError";
+import Button from "../../../components/Button";
 
 const AdminPost = () => {
   const nav = useNavigate();
@@ -50,25 +51,28 @@ const AdminPost = () => {
                     <td>{item.count}</td>
                     <td>{item.reason}</td>
                     <td>
-                      <button
+                      <Button
+                        size="small"
                         onClick={() => {
                           restrictShare(item.id);
                         }}
                       >
                         <TbShareOff />
-                      </button>
-                      <button
+                      </Button>
+                      <Button
+                        size="small"
                         onClick={() => {
                           onReportDelete(item.reportId);
                         }}
                       >
                         신고삭제
-                      </button>
-                      <button
+                      </Button>
+                      <Button
+                        size="small"
                         onClick={() => nav(`${COMMUNITY_PAGE}/${item.id}`)}
                       >
                         페이지이동
-                      </button>
+                      </Button>
                     </td>
                   </tr>
                 );
