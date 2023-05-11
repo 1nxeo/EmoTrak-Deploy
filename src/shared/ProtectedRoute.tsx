@@ -28,7 +28,7 @@ export const ProtectedRoute = ({
   const admin = payload?.auth;
 
   useEffect(() => {
-    if (isAuthAdmin && admin === "ADMIN") {
+    if (admin === "ADMIN") {
       navigate(pathname);
     } else if (isAuthAdmin && admin !== "ADMIN") {
       alert("권한이없습니다.");
