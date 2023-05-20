@@ -69,12 +69,10 @@ const ImagePost = () => {
   // 드래그앤 드랍
   const dragOverHandler = (event: React.DragEvent) => {
     event.preventDefault();
-    event.stopPropagation();
   };
 
   const dropHandler = (event: React.DragEvent<HTMLLabelElement>) => {
     event.preventDefault();
-    event.stopPropagation();
 
     fileDropHandler(event);
     setValid({ ...valid, photo: true });
